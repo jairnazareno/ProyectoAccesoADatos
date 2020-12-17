@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{77F7B284-39E7-4995-8ED1-2FEC6BD2ED38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUWeb", "IUWeb\IUWeb.csproj", "{3EE6B0EE-6F8D-4BC0-9508-A8DEB281AA72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUWindowsForms", "IUWindowsForms\IUWindowsForms.csproj", "{7A92E4AB-B303-4244-A5AD-D996C39D6F5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77F7B284-39E7-4995-8ED1-2FEC6BD2ED38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F7B284-39E7-4995-8ED1-2FEC6BD2ED38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F7B284-39E7-4995-8ED1-2FEC6BD2ED38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F7B284-39E7-4995-8ED1-2FEC6BD2ED38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE6B0EE-6F8D-4BC0-9508-A8DEB281AA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE6B0EE-6F8D-4BC0-9508-A8DEB281AA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE6B0EE-6F8D-4BC0-9508-A8DEB281AA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE6B0EE-6F8D-4BC0-9508-A8DEB281AA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A92E4AB-B303-4244-A5AD-D996C39D6F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A92E4AB-B303-4244-A5AD-D996C39D6F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A92E4AB-B303-4244-A5AD-D996C39D6F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A92E4AB-B303-4244-A5AD-D996C39D6F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6C30D8F-91DB-4F15-95D9-2373660FC0EA}
+	EndGlobalSection
+EndGlobal
