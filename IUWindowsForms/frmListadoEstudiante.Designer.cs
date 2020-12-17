@@ -57,9 +57,9 @@
             // dataGridViewEstudiantes
             // 
             this.dataGridViewEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEstudiantes.Location = new System.Drawing.Point(33, 158);
+            this.dataGridViewEstudiantes.Location = new System.Drawing.Point(33, 160);
             this.dataGridViewEstudiantes.Name = "dataGridViewEstudiantes";
-            this.dataGridViewEstudiantes.Size = new System.Drawing.Size(453, 244);
+            this.dataGridViewEstudiantes.Size = new System.Drawing.Size(755, 244);
             this.dataGridViewEstudiantes.TabIndex = 2;
             // 
             // frmListadoEstudiante
