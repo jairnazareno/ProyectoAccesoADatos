@@ -20,6 +20,49 @@ namespace IUWindowsForms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (this.txtCedula.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debes ingresar la cedula");
+                this.txtCedula.Focus();
+                return;
+            }
+            if (this.txtApellidos.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debes ingresar los apellidos");
+                this.txtApellidos.Focus();
+                return;
+            }
+            if (this.txtNombres.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debes ingresar sus nombres");
+                this.txtNombres.Focus();
+                return;
+            }
+            if (this.cmbSexo.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debe seleccionar su sexo");
+                this.cmbSexo.Focus();
+                return;
+            }
+           
+            if (this.txtCorreos.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debe ingresar el correo");
+                this.txtCorreos.Focus();
+                return;
+            }
+            if (this.txtEstaturas.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debe su estatura");
+                this.txtEstaturas.Focus();
+                return;
+            }
+            if (this.txtPeso.Text.Length == 0)
+            {
+                MessageBox.Show("Por Favor debe ingresar su peso");
+                this.txtPeso.Focus();
+                return;
+            }
             CapaDatos.Persona persona = new CapaDatos.Persona();
             persona.Cedula = this.txtCedula.Text;
             persona.Apellidos = this.txtApellidos.Text;
@@ -75,6 +118,59 @@ namespace IUWindowsForms
             {
                 MessageBox.Show("Dirección valida");
                 txtCorreos.ForeColor = Color.Green;
+            }
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void txtEstaturas_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtEstaturas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 44) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
             }
         }
     }

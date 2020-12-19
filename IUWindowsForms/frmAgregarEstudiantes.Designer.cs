@@ -120,6 +120,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(166, 20);
             this.txtCedula.TabIndex = 7;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // txtApellidos
             // 
@@ -128,6 +129,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(267, 20);
             this.txtApellidos.TabIndex = 8;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombres
             // 
@@ -136,6 +138,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(267, 20);
             this.txtNombres.TabIndex = 9;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // txtCorreos
             // 
@@ -153,6 +156,8 @@
             this.txtEstaturas.Name = "txtEstaturas";
             this.txtEstaturas.Size = new System.Drawing.Size(100, 20);
             this.txtEstaturas.TabIndex = 13;
+            this.txtEstaturas.TextChanged += new System.EventHandler(this.txtEstaturas_TextChanged);
+            this.txtEstaturas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstaturas_KeyPress);
             // 
             // btnGuardar
             // 
@@ -209,6 +214,7 @@
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(100, 20);
             this.txtPeso.TabIndex = 20;
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             // 
             // dtFechaNacimiento
             // 
