@@ -186,6 +186,7 @@
             this.btnCerrar.TabIndex = 17;
             this.btnCerrar.Text = "CERRAR";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // cmbSexo
             // 
