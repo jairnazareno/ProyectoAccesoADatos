@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace IUWindowsForms
 {
@@ -29,11 +30,52 @@ namespace IUWindowsForms
             persona.Estatura = int.Parse(this.txtEstaturas.Text);
             persona.Peso = Decimal.Parse(this.txtPeso.Text);
 
+           
             int x = CapaDatos.PersonaDAO.crear(persona);
-            if (x > 0)
-                MessageBox.Show("Registro agregado con exito...");
-            else
+            
+             if (x > 0)
+                MessageBox.Show("Se agrego correctamente...");
+            else 
                 MessageBox.Show("No se pudo agregar el registro...");
+        }
+
+        private void txtCorreos_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+        public static bool ComprobarEmail(string MailAComprobar)
+        {
+            String Formato;
+            Formato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(MailAComprobar, Formato))
+            {
+                if (Regex.Replace(MailAComprobar, Formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void btnVerificar_Click(object sender, EventArgs e)
+        {
+            if (ComprobarEmail(txtCorreos.Text) == false)
+            {
+                MessageBox.Show("Dirección no valida");
+                txtCorreos.ForeColor = Color.Red;
+            }
+            else
+            {
+                MessageBox.Show("Dirección valida");
+                txtCorreos.ForeColor = Color.Green;
+            }
         }
     }
 }

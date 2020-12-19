@@ -47,6 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.dtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.btnVerificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -143,6 +144,7 @@
             this.txtCorreos.Name = "txtCorreos";
             this.txtCorreos.Size = new System.Drawing.Size(267, 20);
             this.txtCorreos.TabIndex = 12;
+            this.txtCorreos.TextChanged += new System.EventHandler(this.txtCorreos_TextChanged);
             // 
             // txtEstaturas
             // 
@@ -164,7 +166,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(453, 161);
+            this.btnNuevo.Location = new System.Drawing.Point(680, 88);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(83, 47);
             this.btnNuevo.TabIndex = 16;
@@ -173,7 +175,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(453, 239);
+            this.btnCerrar.Location = new System.Drawing.Point(564, 90);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(83, 45);
             this.btnCerrar.TabIndex = 17;
@@ -217,11 +219,22 @@
             this.dtFechaNacimiento.TabIndex = 21;
             this.dtFechaNacimiento.Value = new System.DateTime(2020, 12, 17, 16, 34, 49, 0);
             // 
+            // btnVerificar
+            // 
+            this.btnVerificar.Location = new System.Drawing.Point(381, 275);
+            this.btnVerificar.Name = "btnVerificar";
+            this.btnVerificar.Size = new System.Drawing.Size(155, 22);
+            this.btnVerificar.TabIndex = 22;
+            this.btnVerificar.Text = "Verificacion de correo";
+            this.btnVerificar.UseVisualStyleBackColor = true;
+            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
+            // 
             // frmAgregarEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.dtFechaNacimiento);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label8);
@@ -269,5 +282,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.DateTimePicker dtFechaNacimiento;
+        private System.Windows.Forms.Button btnVerificar;
     }
 }
