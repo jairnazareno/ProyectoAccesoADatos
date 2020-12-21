@@ -7,9 +7,10 @@ namespace CapaDatos
 {
    public class PersonaDAO
     {
-            public static int crear(Persona persona)
+        public static string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Estudiante; integrated security=true";
+        public static int crear(Persona persona)
             {
-            string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Estudiante; integrated security=true";
+         
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
@@ -37,14 +38,26 @@ namespace CapaDatos
 
             return X;
         }
-        public static string  cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Estudiante; integrated security=true";
+       
+        public static DataTable getAll()
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-        public static DataTable GetPersona(string cedula)
+            string sql = "select cedula, upper(apellidos +' '+ nombres) as Estudiante , case when sexo='M' then 'Masculino' else 'Femenino' end as Sexo, F_Nacimiento as [Fecha Nac.], Correo, Estatura, Peso " +
+                "from Personas order by apellidos, nombres";
+
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
+
+            DataTable dt = new DataTable();
+            ad.Fill(dt); 
+            return dt;
+        }
+        public static Persona GetPersona(String cedula)
         {
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "select cedula,apellidos, nombres, F_Nacimiento, Correo, Estatura, Peso" + " from Personas"
+            string sql = "select cedula,apellidos, nombres, sexo, F_Nacimiento, Correo, Estatura, Peso" + " from Personas "
                + "where cedula=@cedula";
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 
@@ -63,12 +76,13 @@ namespace CapaDatos
                 p.Nombres = fila["nombres"].ToString();
                 p.Sexo = fila["sexo"].ToString();
                 p.Correo = fila["correo"].ToString();
-                p.Estatura = int.Parse(fila["Estatura"].ToStrin());
-                p.Cedula = fila["cedula"].ToString();
-
+                p.Estatura = int.Parse(fila["Estatura"].ToString());
+                p.Peso = decimal.Parse(fila["Peso"].ToString());
+                p.FechaNacimiento = Convert.ToDateTime(fila["F_Nacimiento"].ToString());
+                break;
             }
-            return dt;
-            }
+            return p;
+        }
         
     }
 }
