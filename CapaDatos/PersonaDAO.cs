@@ -37,17 +37,36 @@ namespace CapaDatos
 
             return X;
         }
-        public static DataTable getAll()
-            {
-             string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Estudiante; integrated security=true";
+        public static string  cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Estudiante; integrated security=true";
 
-             SqlConnection conexion = new SqlConnection(cadenaConexion);
-               
-             string sql = "select cedula, apellidos, nombres, sexo, F_Nacimiento, Correo, Estatura, Peso" + " from Personas";
-             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
-              
-            DataTable dt = new DataTable(); 
+        public static DataTable GetPersona(string cedula)
+        {
+
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+
+            string sql = "select cedula,apellidos, nombres, F_Nacimiento, Correo, Estatura, Peso" + " from Personas"
+               + "where cedula=@cedula";
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
+
+            ad.SelectCommand.Parameters.AddWithValue("@cedula", cedula);
+
+
+
+            DataTable dt = new DataTable();
             ad.Fill(dt);
+
+            Persona p = new Persona();
+            foreach (DataRow fila in dt.Rows)
+            {
+                p.Cedula = fila["cedula"].ToString();
+                p.Apellidos = fila["apellidos"].ToString();
+                p.Nombres = fila["nombres"].ToString();
+                p.Sexo = fila["sexo"].ToString();
+                p.Correo = fila["correo"].ToString();
+                p.Estatura = int.Parse(fila["Estatura"].ToStrin());
+                p.Cedula = fila["cedula"].ToString();
+
+            }
             return dt;
             }
         

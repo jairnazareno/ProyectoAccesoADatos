@@ -56,9 +56,16 @@
             // 
             // dataGridViewEstudiantes
             // 
+            this.dataGridViewEstudiantes.AllowUserToAddRows = false;
+            this.dataGridViewEstudiantes.AllowUserToDeleteRows = false;
+            this.dataGridViewEstudiantes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEstudiantes.Location = new System.Drawing.Point(33, 160);
             this.dataGridViewEstudiantes.Name = "dataGridViewEstudiantes";
+            this.dataGridViewEstudiantes.ReadOnly = true;
             this.dataGridViewEstudiantes.Size = new System.Drawing.Size(755, 244);
             this.dataGridViewEstudiantes.TabIndex = 2;
             // 

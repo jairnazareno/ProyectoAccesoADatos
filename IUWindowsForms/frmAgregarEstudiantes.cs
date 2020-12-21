@@ -63,23 +63,31 @@ namespace IUWindowsForms
                 this.txtPeso.Focus();
                 return;
             }
-            CapaDatos.Persona persona = new CapaDatos.Persona();
-            persona.Cedula = this.txtCedula.Text;
-            persona.Apellidos = this.txtApellidos.Text;
-            persona.Nombres = this.txtNombres.Text;
-            persona.Sexo = this.cmbSexo.Text;
-            persona.FechaNacimiento = dtFechaNacimiento.Value;
-            persona.Correo = this.txtCorreos.Text;
-            persona.Estatura = int.Parse(this.txtEstaturas.Text);
-            persona.Peso = Decimal.Parse(this.txtPeso.Text);
 
-           
-            int x = CapaDatos.PersonaDAO.crear(persona);
+            try
+            {
+                CapaDatos.Persona persona = new CapaDatos.Persona();
+                persona.Cedula = this.txtCedula.Text;
+                persona.Apellidos = this.txtApellidos.Text;
+                persona.Nombres = this.txtNombres.Text;
+                persona.Sexo = this.cmbSexo.Text;
+                persona.FechaNacimiento = dtFechaNacimiento.Value;
+                persona.Correo = this.txtCorreos.Text;
+                persona.Estatura = int.Parse(this.txtEstaturas.Text);
+                persona.Peso = Decimal.Parse(this.txtPeso.Text);
+
+
+                int x = CapaDatos.PersonaDAO.crear(persona);
+
+                if (x > 0)
+                    MessageBox.Show("Se agrego correctamente...");
+                else
+                    MessageBox.Show("No se pudo agregar el registro...");
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
             
-             if (x > 0)
-                MessageBox.Show("Se agrego correctamente...");
-            else 
-                MessageBox.Show("No se pudo agregar el registro...");
         }
 
         private void txtCorreos_TextChanged(object sender, EventArgs e)

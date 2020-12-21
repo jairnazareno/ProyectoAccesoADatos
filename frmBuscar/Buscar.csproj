@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A92E4AB-B303-4244-A5AD-D996C39D6F5E}</ProjectGuid>
+    <ProjectGuid>{B0B401CC-FA76-4F5E-93AE-C92289FCA355}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>IUWindowsForms</RootNamespace>
-    <AssemblyName>IUWindowsForms</AssemblyName>
+    <RootNamespace>frmBuscar</RootNamespace>
+    <AssemblyName>frmBuscar</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,35 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAgregarEstudiantes.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregarEstudiantes.Designer.cs">
-      <DependentUpon>frmAgregarEstudiantes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBuscar.Designer.cs">
-      <DependentUpon>frmBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmListadoEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmListadoEstudiante.Designer.cs">
-      <DependentUpon>frmListadoEstudiante.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAgregarEstudiantes.resx">
-      <DependentUpon>frmAgregarEstudiantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscar.resx">
-      <DependentUpon>frmBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmListadoEstudiante.resx">
-      <DependentUpon>frmListadoEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -96,12 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{77f7b284-39e7-4995-8ed1-2fec6bd2ed38}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
