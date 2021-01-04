@@ -70,6 +70,32 @@ namespace CapaDatos
             return X;
         }
 
+
+
+        public static int eliminar(String Cedula)
+        {
+
+
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+
+            string sql = "delete from Personas " +
+                "where cedula=@cedula ";
+
+
+            SqlCommand comando = new SqlCommand(sql, conexion);
+
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.AddWithValue("@cedula", Cedula);
+            
+
+
+            conexion.Open();
+            int X = comando.ExecuteNonQuery();
+
+            conexion.Close();
+
+            return X;
+        }
         public static DataTable getAll()
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
@@ -100,6 +126,14 @@ namespace CapaDatos
             ad.Fill(dt);
 
             Persona p = new Persona();
+            //ENCERRAR VALORES
+            p.Cedula = "";
+            p.Apellidos = "";
+            p.Nombres = "";
+            p.Sexo = "";
+            p.Estatura = 0;
+            p.Peso = 0;
+            p.Correo = "";
             foreach (DataRow fila in dt.Rows)
             {
                 p.Cedula = fila["cedula"].ToString();

@@ -77,5 +77,33 @@ namespace IUWindowsForms
                 MessageBox.Show("No se pudo actualizar el registro!");
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Confirme", "Esta seguro que desea eliminar este registro?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            
+            if(dr==DialogResult.No)
+            {
+                return;
+            }
+            int x = CapaDatos.PersonaDAO.eliminar(this.txtCedula.Text);
+            if(x>0)
+            {
+                this.encerar();
+                this.cargarComboEstudiantes();
+                MessageBox.Show("¡No se pudo borrar el registro!");
+            }
+        }
+        private void encerar()
+        {
+            this.txtCedula.Text = "";
+            this.txtApellidos.Text = "";
+            this.txtNombres.Text = "";
+            this.txtCorreo.Text = "";
+            this.txtEstatura.Text = "0";
+            this.txtPeso.Text = "0";
+            //this.dtFechaNacimiento = "";
+        }
     }
+
 }
