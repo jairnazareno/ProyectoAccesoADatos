@@ -39,6 +39,43 @@ namespace IUWindowsForms
             this.txtCedula.Text = p.Cedula;
             this.txtApellidos.Text = p.Apellidos;
             this.txtNombres.Text = p.Nombres;
+            this.cmbSexo.Text = p.Sexo;
+            this.dtFechaNacimiento.Value = Convert.ToDateTime(p.FechaNacimiento);
+            this.txtEstatura.Text = p.Estatura.ToString();
+            this.txtPeso.Text = p.Peso.ToString();
+            this.txtCorreo.Text = p.Correo;
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if(this.txtCedula.Text.Length==0)
+            {
+                MessageBox.Show("No hay cedula seleccionada");
+                return;
+            }
+            CapaDatos.Persona persona = new CapaDatos.Persona();
+            persona.Cedula = this.txtCedula.Text;
+            persona.Apellidos = this.txtApellidos.Text;
+            persona.Nombres = this.txtNombres.Text;
+            persona.Sexo = this.cmbSexo.Text;
+            persona.Correo = this.txtCorreo.Text;
+            persona.Estatura = int.Parse(this.txtEstatura.Text);
+            persona.Peso = decimal.Parse(this.txtPeso.Text);
+            persona.FechaNacimiento = dtFechaNacimiento.Value;
+
+
+            int x=CapaDatos.PersonaDAO.actualizar(persona);
+
+            if (x > 0)
+            {
+                this.cargarComboEstudiantes();
+                MessageBox.Show("Registro Aactualizar con exito!");
+            }
+
+            else
+                MessageBox.Show("No se pudo actualizar el registro!");
+
         }
     }
 }

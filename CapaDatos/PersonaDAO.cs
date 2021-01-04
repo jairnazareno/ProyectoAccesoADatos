@@ -38,7 +38,38 @@ namespace CapaDatos
 
             return X;
         }
-       
+
+        public static int actualizar(Persona persona)
+        {
+
+
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+
+            string sql = "update Personas set  apellidos=@apellidos, nombres=@nombres, sexo=@sexo, F_Nacimiento=@F_Nacimiento, " +
+                "Correo=@Correo, Estatura=@Estatura, Peso=@Peso " + " where cedula=@cedula";
+              
+
+            SqlCommand comando = new SqlCommand(sql, conexion);
+
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.AddWithValue("@cedula", persona.Cedula);
+            comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
+            comando.Parameters.AddWithValue("@nombres", persona.Nombres);
+            comando.Parameters.AddWithValue("@sexo", persona.Sexo);
+            comando.Parameters.AddWithValue("@F_Nacimiento", persona.FechaNacimiento);
+            comando.Parameters.AddWithValue("@Correo", persona.Correo);
+            comando.Parameters.AddWithValue("@Estatura", persona.Estatura);
+            comando.Parameters.AddWithValue("@Peso", persona.Peso);
+
+
+            conexion.Open();
+            int X = comando.ExecuteNonQuery();
+
+            conexion.Close();
+
+            return X;
+        }
+
         public static DataTable getAll()
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
