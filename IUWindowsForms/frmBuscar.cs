@@ -102,7 +102,7 @@ namespace IUWindowsForms
             this.txtCorreo.Text = "";
             this.txtEstatura.Text = "0";
             this.txtPeso.Text = "0";
-            //this.dtFechaNacimiento = "";
+            
         }
     }
 
