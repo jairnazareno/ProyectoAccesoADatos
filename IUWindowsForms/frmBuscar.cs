@@ -49,7 +49,7 @@ namespace IUWindowsForms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if(this.txtCedula.Text.Length==0)
+            if (this.txtCedula.Text.Length == 0)
             {
                 MessageBox.Show("No hay cedula seleccionada");
                 return;
@@ -65,7 +65,7 @@ namespace IUWindowsForms
             persona.FechaNacimiento = dtFechaNacimiento.Value;
 
 
-            int x=CapaDatos.PersonaDAO.actualizar(persona);
+            int x = CapaDatos.PersonaDAO.actualizar(persona);
 
             if (x > 0)
             {
@@ -81,13 +81,13 @@ namespace IUWindowsForms
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Confirme", "Esta seguro que desea eliminar este registro?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            
-            if(dr==DialogResult.No)
+
+            if (dr == DialogResult.No)
             {
                 return;
             }
             int x = CapaDatos.PersonaDAO.eliminar(this.txtCedula.Text);
-            if(x>0)
+            if (x > 0)
             {
                 this.encerar();
                 this.cargarComboEstudiantes();
@@ -102,8 +102,20 @@ namespace IUWindowsForms
             this.txtCorreo.Text = "";
             this.txtEstatura.Text = "0";
             this.txtPeso.Text = "0";
+
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+           
+
             
         }
     }
-
 }
+

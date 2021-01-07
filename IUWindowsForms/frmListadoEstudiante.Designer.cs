@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.dataGridViewEstudiantes = new System.Windows.Forms.DataGridView();
+            this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,18 +58,37 @@
             // 
             // dataGridViewEstudiantes
             // 
-            this.dataGridViewEstudiantes.AllowUserToAddRows = false;
-            this.dataGridViewEstudiantes.AllowUserToDeleteRows = false;
             this.dataGridViewEstudiantes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEstudiantes.Location = new System.Drawing.Point(33, 160);
+            this.dataGridViewEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.linkEliminar,
+            this.linkActualizar});
+            this.dataGridViewEstudiantes.Location = new System.Drawing.Point(33, 176);
             this.dataGridViewEstudiantes.Name = "dataGridViewEstudiantes";
-            this.dataGridViewEstudiantes.ReadOnly = true;
             this.dataGridViewEstudiantes.Size = new System.Drawing.Size(755, 244);
             this.dataGridViewEstudiantes.TabIndex = 2;
+            this.dataGridViewEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEstudiantes_CellContentClick);
+            // 
+            // linkEliminar
+            // 
+            this.linkEliminar.HeaderText = "Accion";
+            this.linkEliminar.Name = "linkEliminar";
+            this.linkEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.linkEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.linkEliminar.Text = "Eliminar";
+            this.linkEliminar.UseColumnTextForLinkValue = true;
+            this.linkEliminar.Width = 65;
+            // 
+            // linkActualizar
+            // 
+            this.linkActualizar.HeaderText = "Accion";
+            this.linkActualizar.Name = "linkActualizar";
+            this.linkActualizar.Text = "Actualizar";
+            this.linkActualizar.UseColumnTextForLinkValue = true;
+            this.linkActualizar.Width = 46;
             // 
             // frmListadoEstudiante
             // 
@@ -90,5 +111,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.DataGridView dataGridViewEstudiantes;
+        private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
+        private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
     }
 }
