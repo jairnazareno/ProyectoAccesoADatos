@@ -33,6 +33,7 @@
             this.dataGridViewEstudiantes = new System.Windows.Forms.DataGridView();
             this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,12 +92,23 @@
             this.linkActualizar.UseColumnTextForLinkValue = true;
             this.linkActualizar.Width = 46;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(355, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmListadoEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewEstudiantes);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.label1);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.DataGridView dataGridViewEstudiantes;
         private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
         private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
+        private System.Windows.Forms.Button button1;
     }
 }
